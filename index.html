@@ -6,30 +6,82 @@
   <meta charset="UTF-8">
   <style>
     #header {
-      width: 780px;
+      width: min(875px,90%);
       height: 225px;
       margin: auto;
     }
     #header-logo{
       text-align: center;
     }
-    #tabs {
-      list-style: none;
-      overflow: hidden;
-      padding-left: auto;
+    #menu {
+      margin: auto;
     }
-    #tabs li {
-      width: 140px;
-      text-align: center;
-      background-color: aqua;
-      float: left;
-      height: 50px;
-      line-height: 50px;
-      margin-right: 2px;
+    @media screen and (max-width: 875px){
+      #menu {
+        width: 90%;
+      }
+      #menu a {
+          display: block;
+          padding: 15px;
+          text-decoration: none;
+          color: #000;
+      }
+      label {
+          display: block;
+          margin: 0 0 4px 0;
+          padding : 15px;
+          line-height: 1;
+          color :#fff;
+          background : green;
+          cursor :pointer;
+      }
+      input {
+          display: none;
+      }
+      #menu ul {
+          margin: 0;
+          padding: 0;
+          background :#f4f4f4;
+          list-style: none;
+      }
+      #menu li {
+          height: 0;
+          overflow: hidden;
+          -webkit-transition: all 0.5s;
+          -moz-transition: all 0.5s;
+          -ms-transition: all 0.5s;
+          -o-transition: all 0.5s;
+          transition: all 0.5s;
+      }
+      #menu-bar:checked ~ #tabs li {
+        height: 50px;
+      }
     }
-    #tabs li a {
-      text-decoration: none;
-      font-weight: bold;
+    @media screen and (min-width: 875px){
+      label {
+        display: none;
+      }
+      input {
+        display: none;
+      }
+      #tabs {
+        list-style: none;
+        overflow: hidden;
+        margin: auto;
+      }
+      #tabs li {
+        width: 140px;
+        text-align: center;
+        background-color: aqua;
+        float: left;
+        height: 50px;
+        line-height: 50px;
+        margin-right: 2px;
+      }
+      #tabs li a {
+        text-decoration: none;
+        font-weight: bold;
+      } 
     }
   </style>
 </head>
@@ -40,7 +92,10 @@
         <img src="jigsaw-mark.png" width="400" height="150">
       </a>
     </div>
-    <ul id="tabs">
+    <div id="menu">
+      <label for="menu-bar">MENU</label>
+      <input type="checkbox" id="menu-bar" class="accordion" />
+      <ul id="tabs">
       <li>
         <a>
           About
@@ -66,7 +121,8 @@
           News
         </a>
       </li>
-    </ul>
+      </ul>
+    </div>
   </div>
   <div id="page">
     
