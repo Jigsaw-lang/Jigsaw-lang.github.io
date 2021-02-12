@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jigsaw</title>
+  <link rel="icon" type="image/png" href="../jigsaw-logo.png">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+  <meta charset="UTF-8">
+  <style>
+    #header {
+      width: min(750px,90vw);
+      height: 225px;
+      margin: auto;
+    }
+    #header-logo {
+      text-align: center;
+    }
+    #header-logo a img{
+      width: min(400px,75%);
+      height: min(150px,75%);
+    }
+    #menu {
+      margin: auto;
+    }
+    @media screen and (max-width: 875px){
+      #menu {
+        width: 90%;
+      }
+      #menu a {
+          display: block;
+          padding: 15px;
+          text-decoration: none;
+          color: #000;
+      }
+      label {
+          display: block;
+          margin: 0 0 4px 0;
+          padding : 15px;
+          line-height: 1;
+          color: #fff;
+          background: cornflowerblue;
+          cursor:pointer;
+      }
+      input {
+          display: none;
+      }
+      #menu ul {
+          margin: 0;
+          padding: 0;
+          background: beige; 
+          list-style: none;
+      }
+      #menu li {
+          height: 0;
+          overflow: hidden;
+          -webkit-transition: all 0.5s;
+          -moz-transition: all 0.5s;
+          -ms-transition: all 0.5s;
+          -o-transition: all 0.5s;
+          transition: all 0.5s;
+      }
+      #menu-bar:checked ~ #tabs li {
+        height: 50px;
+      }
+    }
+    @media screen and (min-width: 875px){
+      label {
+        display: none;
+      }
+      input {
+        display: none;
+      }
+      #tabs {
+        list-style: none;
+        overflow: hidden;
+        margin: auto;
+      }
+      #tabs li {
+        width: 140px;
+        text-align: center;
+        border-radius: 10px;
+        background-color: beige;
+        float: left;
+        height: 50px;
+        line-height: 50px;
+        margin-right: 2px;
+        padding: solid 10px;
+      }
+      #tabs li a {
+        text-decoration: none;
+        font-weight: bold;
+      } 
+    }
+  </style>
+</head>
+<body id="home-page-layout">
+  <div id="header">
+    <div id="header-logo">
+      <a href="/">
+        <img src="../jigsaw-mark.png">
+      </a>
+    </div>
+    <div id="menu">
+      <label for="menu-bar"><b>About</b></label>
+      <input type="checkbox" id="menu-bar" class="accordion" />
+      <ul id="tabs">
+      <li>
+        <a>
+          Home
+        </a>
+      </li>
+      <li>
+        <a>
+          Download
+        </a>
+      </li>
+      <li>
+        <a>
+          Guide
+        </a>
+      </li>
+      <li>
+        <a>
+          Samples
+        </a>
+      </li>
+      <li>
+        <a>
+          News
+        </a>
+      </li>
+      </ul>
+    </div>
+  </div>
+  <div id="page">
+    
+  </div>
+</body>
+</html>
