@@ -16,19 +16,21 @@
     }
     #header-console {
       width: min(710px,90vw);
-      height: 225px;
+      height: 220px;
       margin: auto;
     }
     #header-logo {
       text-align: center;
+      padding: 0;
     }
     #header-logo a img{
       width: min(400px,75%);
       height: min(150px,75%);
+      vertical-align: top;
     }
     #menu {
       padding-left: 0px;
-      margin: auto;
+      margin: 0 auto;
     }
     @media screen and (max-width: 788px){
       #menu {
@@ -74,6 +76,12 @@
         height: 50px;
         border-bottom: gray solid 1px;
       }
+      #page-top {
+        display: none;
+      }
+      #text {
+        width: min(800px,calc(90vw+90px));
+      }
     }
     @media screen and (min-width: 788px){
       label {
@@ -113,6 +121,52 @@
       #tabs :not(#selected){
         color: black;
       }
+      #page-top{
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        right: 40px;
+        bottom: 20px;
+        background:cadetblue;
+        opacity: 0.6;
+      }
+      #page-top a{
+        position: relative;
+        display: block;
+        width: 50px;
+        height: 50px;
+        text-decoration: none;
+      }
+      #page-top a::after{
+        content: '▲';
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+        position: absolute;
+        top: 15px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        text-align: center;
+      }
+    }
+    #lang {
+      margin: auto;
+      width: min(800px,calc(90vw+90px));
+      line-height: 0;
+      text-align: end;
+    }
+    #lang a{
+      text-decoration: none;
+      color: #000;
+    }
+    #text {
+      width: min(800px,calc(90vw+90px));
+      margin: auto;
+      font-size: 20px;
+      font-family: "Tsukushi A Round Gothic";
+      font-weight: bold;
     }
   </style>
 </head>
@@ -156,9 +210,16 @@
         </ul>
       </div>
     </div>
+    <div id="lang">
+      <b>ja</b>/<a href="https://jigsaw-lang.github.io/en/">en</a>
+    </div>
   </div>
   <div id="page">
-    
+    <div id="text">
+    </div>
+    <div id="page-top">
+      <a href="#"></a>
+    </div>
   </div>
 </body>
 </html>
