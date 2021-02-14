@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jigsaw</title>
+  <link rel="icon" type="image/png" href="../jigsaw-logo.png">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+  <meta charset="UTF-8">
+  <style>
+    body{
+      margin: 0 0;
+    }
+    #header{
+      width: 100vw;
+      height: 230px;
+      border-bottom: gray solid 1px;
+    }
+    #header-console {
+      width: min(710px,90vw);
+      height: 220px;
+      margin: auto;
+    }
+    #header-logo {
+      text-align: center;
+      padding: 0;
+    }
+    #header-logo a img{
+      width: min(400px,75%);
+      height: min(150px,75%);
+      vertical-align: top;
+    }
+    #menu {
+      padding-left: 0px;
+      margin: 0 auto;
+    }
+    @media screen and (max-width: 788px){
+      #menu {
+        width: 90%;
+      }
+      #menu a {
+          display: block;
+          padding: 15px;
+          text-decoration: none;
+          color: #000;
+      }
+      label {
+          display: block;
+          margin: 0 0 4px 0;
+          padding : 15px;
+          line-height: 1;
+          color: #fff;
+          background: cornflowerblue;
+          cursor:pointer;
+      }
+      input {
+          display: none;
+      }
+      #menu ul {
+          margin: 0;
+          padding: 0;
+          background: beige; 
+          list-style: none;
+      }
+      #menu li {
+          height: 0;
+          overflow: hidden;
+          -webkit-transition: all 0.5s;
+          -moz-transition: all 0.5s;
+          -ms-transition: all 0.5s;
+          -o-transition: all 0.5s;
+          transition: all 0.5s;
+      }
+      #tabs #selected a {
+        font-weight: bold;
+      }
+      #menu-bar:checked ~ #tabs li {
+        height: 50px;
+        border-bottom: gray solid 1px;
+      }
+      #page-top {
+        display: none;
+      }
+      #text {
+        width: min(800px,calc(90vw+90px));
+      }
+    }
+    @media screen and (min-width: 788px){
+      label {
+        display: none;
+      }
+      input {
+        display: none;
+      }
+      #tabs {
+        padding-left: 0px;
+        list-style: none;
+        overflow: hidden;
+      }
+      #tabs li {
+        width: 140px;
+        text-align: center;
+        border-radius: 10px;
+        float: left;
+        height: 50px;
+        line-height: 50px;
+        margin-right: 2px;
+      }
+      #tabs li a {
+        text-decoration: none;
+        font-weight: bold;
+      }
+      #tabs #selected {
+        background-color: cornflowerblue;
+      }
+      #tabs #selected a {
+        background-color: cornflowerblue;
+        color: white;
+      }
+      #tabs :not(#selected){
+        background-color: cornsilk;
+      }
+      #tabs :not(#selected){
+        color: black;
+      }
+      #page-top{
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        right: 40px;
+        bottom: 20px;
+        background:cadetblue;
+        opacity: 0.6;
+      }
+      #page-top a{
+        position: relative;
+        display: block;
+        width: 50px;
+        height: 50px;
+        text-decoration: none;
+      }
+      #page-top a::after{
+        content: '▲';
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+        position: absolute;
+        top: 15px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        text-align: center;
+      }
+    }
+    #lang {
+      margin: auto;
+      width: min(800px,calc(90vw+90px));
+      line-height: 0;
+      text-align: end;
+    }
+    #lang a{
+      text-decoration: none;
+      color: #000;
+    }
+    #text {
+      width: min(800px,calc(90vw+90px));
+      margin: auto;
+      font-size: 20px;
+      font-family: "Tsukushi A Round Gothic";
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body id="home-page-layout">
+  <div id="header">
+    <div id="header-console">
+      <div id="header-logo">
+        <a href="https://jigsaw-lang.github.io/en/">
+          <img src="https://jigsaw-lang.github.io/jigsaw-mark.png">
+        </a>
+      </div>
+      <div id="menu">
+        <label for="menu-bar"><b>Home</b></label>
+        <input type="checkbox" id="menu-bar" class="accordion" >
+        <ul id="tabs">
+        <li>
+          <a href="https://jigsaw-lang.github.io/en/about/">
+            About
+          </a>
+        </li>
+        <li>
+          <a>
+            Download
+          </a>
+        </li>
+        <li>
+          <a>
+            Guide
+          </a>
+        </li>
+        <li>
+          <a>
+            Samples
+          </a>
+        </li>
+        <li>
+          <a>
+            News
+          </a>
+        </li>
+        </ul>
+      </div>
+    </div>
+    <div id="lang">
+      <a href="https://jigsaw-lang.github.io/ja/">ja</a>/<b>en</b>
+    </div>
+  </div>
+  <div id="page">
+    <div id="text">
+    </div>
+    <div id="page-top">
+      <a href="#"></a>
+    </div>
+  </div>
+</body>
+</html>
