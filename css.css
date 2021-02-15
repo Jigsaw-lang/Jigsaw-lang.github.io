@@ -24,24 +24,28 @@ body {
   height: min(150px,75%);
   vertical-align: top;
 }
+#tabs li a{
+  text-decoration: none;
+}
 #menu {
-  padding-left: 0px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 3;
 }
 @media screen and (max-width: 788px){
   #menu {
     width: 90%;
+    margin: 0 auto;
+    padding: 0;
   }
-  #menu a {
+  #menu a{
       display: block;
-      padding: 15px;
       text-decoration: none;
       color: #000;
   }
   label {
       display: block;
       margin: 0 0 4px 0;
-      padding : 15px;
+      padding: 15px;
       line-height: 1;
       color: #fff;
       background: cornflowerblue;
@@ -50,33 +54,32 @@ body {
   input {
       display: none;
   }
-  #menu ul {
-      margin: 0;
-      padding: 0;
-      background: beige; 
-      list-style: none;
+  #menu #tabs{
+    margin: 0;
+    padding: 0;
+    background: cornsilk; 
+    list-style: none;
   }
-  #menu li {
-      height: 0;
-      overflow: hidden;
-      -webkit-transition: all 0.5s;
-      -moz-transition: all 0.5s;
-      -ms-transition: all 0.5s;
-      -o-transition: all 0.5s;
-      transition: all 0.5s;
+  #menu li{
+    padding-left: 15px;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
   }
-  #tabs #selected a {
+  #tabs #selected{
     font-weight: bold;
   }
-  #menu-bar:checked ~ #tabs li {
+  #menu-bar:checked ~ #tabs li{
     height: 50px;
+    line-height: 50px;
     border-bottom: gray solid 1px;
   }
   #page-top {
     display: none;
-  }
-  #text {
-    width: min(800px,calc(90vw+90px));
   }
 }
 @media screen and (min-width: 788px){
@@ -87,11 +90,11 @@ body {
     display: none;
   }
   #tabs {
-    padding-left: 0px;
     list-style: none;
     overflow: hidden;
+    padding-left: 0;
   }
-  #tabs li {
+  #tabs li{
     width: 140px;
     text-align: center;
     border-radius: 10px;
@@ -102,9 +105,12 @@ body {
     text-decoration: none;
     font-weight: bold;
   }
-  #tabs #selected {
+  #tabs #selected{
     background-color: cornflowerblue;
-    color:#fff;
+  }
+  #tabs #selected a{
+    background-color: cornflowerblue;
+    color: white;
   }
   #tabs :not(#selected){
     background-color: cornsilk;
